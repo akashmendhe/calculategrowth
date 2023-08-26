@@ -11,7 +11,7 @@ pipeline {
 		    echo "Build and Test"
 		    withCredentials([usernamePassword(credentialsId:"dockerhub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
                     sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                    sh "docker build -t kshitibartakke/calculategrowth ."
+                    sh "docker build -t akashm123/calculategrowth ."
 					}
             }
         }
