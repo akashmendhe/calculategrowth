@@ -3,7 +3,7 @@ pipeline {
         stages{
         stage("Git Clone"){
             steps{
-                git url: "https://github.com/kshitijabartakke/calculategrowth.git", branch: "main"
+                git url: "https://github.com/akashmendhe/calculategrowth.git", branch: "main"
             }
         }
         stage("Create Docker Image"){
@@ -20,7 +20,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId:"dockerhub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
                     sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
                     sh "docker images"
-					sh "docker push kshitibartakke/calculategrowth:latest"
+					sh "docker push akashm123/calculategrowth:latest"
 				}
 			}
 		}
